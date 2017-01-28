@@ -8,6 +8,7 @@ class SessionsController < ApplicationController
     @user = User.confirm(user_params)
     if @user
       login(@user)
+      flash[:notice] = "Succesfully logged in"
       redirect_to @user
     else
       redirect_to login_path
