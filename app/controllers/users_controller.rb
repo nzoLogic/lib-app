@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   def create
     @user = User.create(user_params)
     if @user.save
-      redirect_to users_path
+      redirect_to @user
     else
       redirect_to new_user
     end
