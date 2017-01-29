@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   root to: 'users#index'
 
   #on this route use the 'UsersController' with new action with the hash as new_user
@@ -16,5 +17,8 @@ Rails.application.routes.draw do
   post '/libraries' => 'libraries#create'
   get '/libraries/:id' => 'libraries#show'
   resources :libraries
+
+  get '/users/:id/libraries', to: 'library_users#index', as: 'user_libraries'
+  post '/libraries/:library_id/users', to: 'library_users#create', as: 'library_users'
 
 end
