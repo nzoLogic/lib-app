@@ -9,6 +9,6 @@ class LibraryUsersController < ApplicationController
     @library = Library.find(params[:library_id])
     @library.users << current_user
 
-    redirect_to current_user
+    redirect_to user_libraries_path
   end
 end

@@ -1,4 +1,7 @@
 <%= form_for @user do |f| %>
+  <% if flash[:login_error] %>
+  <strong><%= flash[:login_error] %></strong>
+  <% end %>
   <div>
     <%= f.text_field :first_name, placeholder: "first name" %>
   </div>

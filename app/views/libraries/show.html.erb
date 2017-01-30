@@ -8,4 +8,7 @@
   <p>
     <strong>Floor Area: </strong> <%= @library.floor_area %>
   </p>
+  <% if current_user %>
+  <%= button_to "Join", library_users_path(@library) %>
+  <% end %>
 </div>

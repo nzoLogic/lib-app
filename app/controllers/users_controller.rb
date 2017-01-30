@@ -14,8 +14,10 @@ class UsersController < ApplicationController
   def create
     @user = User.create(user_params)
     if @user.save
+      login(@user)
       redirect_to @user
     else
+      flash[:login_error] = "invalid email or password. try again"
       redirect_to new_user
     end
   end

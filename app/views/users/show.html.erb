@@ -1,4 +1,6 @@
 <div>
-  Welcome <%= @user.first_name %>!
-  <%= link_to "Libraries", user_libraries_path %>
+  <h3>
+  Welcome <strong><%= @user.first_name %></strong>!
+</h3>
+  <%= link_to "Your Libraries", user_libraries_path %>
 </div>
